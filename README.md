@@ -15,7 +15,7 @@ python3.XX -m venv venv
 If on Windows run:
 
 ```powershell
-.\venv\activate
+.\venv\Scripts\activate
 ```
 
 If on Linux run:
