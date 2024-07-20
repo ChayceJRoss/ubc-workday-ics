@@ -1,13 +1,13 @@
 import sys
 import pandas as pd
 from datetime import datetime
+import click
 
 def get_events(df):
     events = []
     today = datetime.now()
     ical_format = "%Y%m%dT%H%M%S"
     for index, row in df.iterrows():
-        print(row)
         course = row["Course Listing"]
         dates = row["Meeting Patterns"]
         if type(dates) == float:
@@ -69,17 +69,17 @@ END:VTIMEZONE
 {events_string}
 END:VCALENDAR"""
 
-def main():
-    source = sys.argv[1]
-    destination = sys.argv[2]
-
+@click.command()
+@click.argument("source", type=click.Path(exists=True) )
+@click.argument("destination", type=click.File("wb")) 
+@click.option("--author", help="Name of author for ical file.")
+def main(source, destination, author):
+    print(source)
     df = pd.read_excel(source, dtype=str)
-    print(df)
     events = get_events(df)
-    print(events)
     ics_string = get_ics(events)
-    with open(destination, "w", encoding="utf-8") as f: 
-        f.write(ics_string)
+    click.echo(ics_string)
+    destination.write(ics_string.encode(encoding="utf-8"))
 
 if __name__ == "__main__":
     main()
