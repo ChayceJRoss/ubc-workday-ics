@@ -1,6 +1,10 @@
 # UBC Workday Excel to ICS CLI Tool
 
 ## Installation
+Clone this repo:
+```bash
+git clone https://github.com/ChayceJRoss/ubc-workday-ics.git
+```
 
 To install run:
 
