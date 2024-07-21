@@ -27,7 +27,7 @@ If on Windows run:
 .\venv\Scripts\activate
 ```
 
-If on Linux run:
+If on Linux or Mac run:
 
 ```
 source venv/bin/activate
