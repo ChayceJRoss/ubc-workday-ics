@@ -2,10 +2,10 @@
 
 ## Issues and Incomplete Features
 
-I am not sure how robust this works with other peoples calendars.
+I am not sure how robust this works with other peoples calendars. 
 
 Still need to edit an make it readable so if you are reading this I am sorry! +
-testing + ...
+testing + ... I am using fizz to stress test then I'll put it on reddit.
 
 ## Installation
 
